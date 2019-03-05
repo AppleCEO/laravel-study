@@ -22,7 +22,7 @@ class ArticlesController extends Controller
 
         //페이지로 가져오는 방법    
         $articles = \App\Article::latest()->paginate(3);
-
+        // dd(view('articles.index', compact('articles'))->render());
         return view('articles.index', compact('articles'));
     }
 
@@ -83,7 +83,9 @@ class ArticlesController extends Controller
      */
     public function show($id)
     {
-        return __METHOD__ . '은(는) 다음 기본 키를 가진 Article 모델을 조회합니다.:'. $id;
+        $article = \App\Article::findOrFail($id);
+        
+        return $article->toArray();
     }
 
     /**

@@ -56,8 +56,11 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'john@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'admin'),
+        // 'address' => env('MAIL_FROM_ADDRESS', 'john@example.com'),
+        // 'name' => env('MAIL_FROM_NAME', 'admin'),
+
+        'address' => 'john@example.com',
+        'name' => 'Admin'
     ],
 
     /*
@@ -133,4 +136,8 @@ return [
 
     'log_channel' => env('MAIL_LOG_CHANNEL'),
 
+    'to' => [
+        'address' => 'yours@domain',
+        'name' => 'Tester',
+    ],
 ];
